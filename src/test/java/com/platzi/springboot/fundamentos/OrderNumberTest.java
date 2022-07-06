@@ -1,20 +1,24 @@
 package com.platzi.springboot.fundamentos;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.TestExecutionListeners;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Stream;
 
-public class OrderNumberTest {
+class OrderNumberTest {
 
+    //find the first positive value that are missing in the array.
     @Test
-    void findMissingOrderNumberList() {
+    void findMissingOrderNumberListTest() {
         int[] initial = {1, 2, 3, 4, 5, 99, 1};
 //        int[] initial = {-1, -2,- 3, -5, -99, -1};
-
 //       int[] initial = {1, 2, -3, 5, -99, 1};
 //       int[] initial = {1,2,3,4,5,6,7,8};
-      // int[] initial = {-15, 1,5,6,7,8};
- //       int[] initial = {5, 6, 7, 8};
+        // int[] initial = {-15, 1,5,6,7,8};
+        //       int[] initial = {5, 6, 7, 8};
         // write your code in Java SE 8
         int missingOrderNumber = 1;
         int limit = initial.length - 1;
@@ -45,6 +49,32 @@ public class OrderNumberTest {
             }
         }
         System.out.println("result " + missingOrderNumber);
+        Assertions.assertNotEquals(missingOrderNumber, 0);
+    }
+
+    @Test
+    void putAllZerosToTheFinal(){
+
+       int counter = 0;
+       int numberOfZeros=0;
+       //int[] arrayInts = {1, 2, 0, 4, 3, 0, 5, 0};
+      // int[] arrayInts = {0,1, 0,0};
+       int[] arrayInts = {4,1, 9,687};
+       Arrays.sort(arrayInts);
+        for(int i = 0 ; i < arrayInts.length ; i++)
+        {
+            if(arrayInts[i] != 0){
+                arrayInts[counter++] = arrayInts[i];
+            } else{
+                numberOfZeros++;
+            }
+        }
+        while (numberOfZeros > 0) {
+            arrayInts[counter++] = 0;
+            numberOfZeros--;
+        }
+        Arrays.stream(arrayInts).forEach(System.out::println);
+
     }
 
 }
