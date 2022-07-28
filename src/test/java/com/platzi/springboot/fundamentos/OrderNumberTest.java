@@ -2,11 +2,8 @@ package com.platzi.springboot.fundamentos;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.test.context.TestExecutionListeners;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 class OrderNumberTest {
 
@@ -42,9 +39,9 @@ class OrderNumberTest {
                 }
                 //  System.out.println("record " + x + "- value=" + initial[x]);
             }
-            if((initial[0] > 0 && initial[0] != 1)){
+            if ((initial[0] > 0 && initial[0] != 1)) {
                 missingOrderNumber = 1;
-            }else if (missingOrderNumber == 1) {
+            } else if (missingOrderNumber == 1) {
                 missingOrderNumber = initial[limit] + 1;
             }
         }
@@ -53,19 +50,18 @@ class OrderNumberTest {
     }
 
     @Test
-    void putAllZerosToTheFinal(){
+    void putAllZerosToTheFinal() {
 
-       int counter = 0;
-       int numberOfZeros=0;
-       //int[] arrayInts = {1, 2, 0, 4, 3, 0, 5, 0};
-      // int[] arrayInts = {0,1, 0,0};
-       int[] arrayInts = {4,1, 9,687};
-       Arrays.sort(arrayInts);
-        for(int i = 0 ; i < arrayInts.length ; i++)
-        {
-            if(arrayInts[i] != 0){
+        int counter = 0;
+        int numberOfZeros = 0;
+        //int[] arrayInts = {1, 2, 0, 4, 3, 0, 5, 0};
+        // int[] arrayInts = {0,1, 0,0};
+        int[] arrayInts = {4, 1, 9, 687};
+        Arrays.sort(arrayInts);
+        for (int i = 0; i < arrayInts.length; i++) {
+            if (arrayInts[i] != 0) {
                 arrayInts[counter++] = arrayInts[i];
-            } else{
+            } else {
                 numberOfZeros++;
             }
         }
