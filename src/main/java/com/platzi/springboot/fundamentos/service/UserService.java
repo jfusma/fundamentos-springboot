@@ -9,7 +9,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -30,6 +33,9 @@ public class UserService {
     }
 
     public List<User> getUserByPage(int page, int pageSize) {
+        Map<String, String> structure = new HashMap<>();
+        Optional<String> resutl = Optional.of(structure.get("s").toString());
+
         return userRepository.findAll(PageRequest.of(page, pageSize)).getContent();
     }
 

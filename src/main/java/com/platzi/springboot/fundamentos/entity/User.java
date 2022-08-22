@@ -29,7 +29,9 @@ public class User {
     @JsonManagedReference
     private List<Post> post = new ArrayList<>();
 
+
     public User(String name, String email, LocalDate birthdate) {
+
         this.email = email;
         this.name = name;
         this.birthdate = birthdate;

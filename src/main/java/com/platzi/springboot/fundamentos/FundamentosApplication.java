@@ -65,4 +65,8 @@ public class FundamentosApplication implements CommandLineRunner {
         getUserFromJPQLMethod();
         getAllUserUsingLikeQuery();
     }
+
+
+
+
 }

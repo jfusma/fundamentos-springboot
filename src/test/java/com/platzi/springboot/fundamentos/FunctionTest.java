@@ -45,4 +45,9 @@ public class FunctionTest {
 
         System.out.println(sum);
     }
+
+    static boolean exists(int[] ints, int k) {
+         return Arrays.stream(ints).filter(ob -> {return ob == k;}).findAny().isPresent();
+
+    }
 }

@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class OrderNumberTest {
 
@@ -71,6 +74,55 @@ class OrderNumberTest {
         }
         Arrays.stream(arrayInts).forEach(System.out::println);
 
+    }
+
+    @Test
+    public void putAllZerosInTheFinal_RIGTH(){
+        int[] arrayInts = {1, 2, 0, 4, 3, 0, 5, 0};
+        int positionwithoutzero = 0;
+        int contadorNumeros=0;
+        for( int i= 0 ; i < arrayInts.length ; i++){
+
+           if (arrayInts [i] == 0 ){
+                  positionwithoutzero ++;
+           }else{
+               arrayInts[contadorNumeros] = arrayInts[i];
+               contadorNumeros++;
+           }
+           if(i == arrayInts.length-1) {
+               for (int j = contadorNumeros; j < arrayInts.length ; j++) {
+                   arrayInts[j]=0;
+               }
+           }
+
+        }
+        for( int i= 0 ; i < arrayInts.length ; i++){
+            System.out.println(arrayInts[i]);
+        }
+    }
+
+/** organiza un array poniendo todos los ceros en las posiciones de inicio. izquierdad.**/
+    @Test
+    public void putAllZerosInTheINITIAL_LEFT(){
+       // int[] arrayInts = {1, 2, 0, 4, 3, 0, 5, 0};
+        int[] arrayInts = {1, 2, 0, 0, 0, 0, 0, 0};
+        int contadorNumeros = arrayInts.length -1;
+        for( int i= arrayInts.length -1 ; i >= 0 ; i--){
+
+            if (arrayInts [i] != 0 ){
+                arrayInts[contadorNumeros] = arrayInts[i];
+                contadorNumeros--;
+            }
+            if(i == 0) {
+                for (int j = contadorNumeros; j >=0 ; j--) {
+                    arrayInts[j]=0;
+                }
+            }
+
+        }
+        for (int arrayInt : arrayInts) {
+            System.out.println(arrayInt);
+        }
     }
 
 }

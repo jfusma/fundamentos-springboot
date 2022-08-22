@@ -50,9 +50,12 @@ public class ReverseTest {
 
         List<String> results = employees
                 .stream()
-                .map(getReversedUppercasedName)
+                .map(e -> e.name.toUpperCase())
+                //.map(getReversedUppercasedName)
                 .collect(Collectors.toList());
 
         System.out.println(results);
     }
+
+
 }
